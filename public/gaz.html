@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Gaz, 3D Experience</title>
+    <meta name="description" content="Gaz, 3D Experience" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene renderer="colorManagement: true;">
+      <a-assets>
+        <a-asset-item id="engine" src="/models/Gaz.glb"></a-asset-item>
+      </a-assets>
+
+      <a-entity position="1.75 0 1.2" rotation="0 75 0">
+        <a-camera position="2.75 0 1.2" near="0.1"></a-camera>
+      </a-entity>
+
+      <a-sky color="#000"></a-sky>
+
+      <a-entity position="0 0 -3">
+        <a-gltf-model
+          src="#engine"
+          scale="0.5 0.5 0.5"
+          position="2 -0.6 2"
+        ></a-gltf-model>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
